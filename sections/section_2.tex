@@ -1,0 +1,150 @@
+\section{\S 2: Ma trận}
+\subsection{Định nghĩa}
+Một ma trận, đặt tên A (hay, B, C,..) \\
+Có kích cỡ \textbf{$m\times n$} gồm \textbf{m dòng} và \textbf{n cột} là bảng hình chữ nhật sau:
+$
+\begin{bmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix} =[a_{ij}]_{m\times n}
+$ \\
+* Phần tử $a_ij$ nằm tại dòng i và cột j của ma trận A. \\
+* Khi số dòng = số cột $(m=n)$ thì A gọi là ma trận \textbf{\underline{vuông cấp n}}.
+
+\subsection{Một số ma trận có dạng đặc biệt}
+\begin{enumerate}[label=\arabic{enumi}$^0$.,leftmargin=*]
+	\item Ma trận dòng \textbf{thì chỉ có 1 dòng}: \\
+	$\begin{bmatrix}
+		2 & 4 & 1 & 7
+	\end{bmatrix}_{1 \times 4}$
+	\item Ma trận cột \textbf{chỉ có 1 cột}: \\
+	$
+	\begin{bmatrix}
+		3 \\
+		-1 \\
+		4 \\
+		2 \\
+	\end{bmatrix}_{1 \times 4} 
+	$
+	\item Ma trận không ($\mathbb{0}$) có mọi phần tử là số 0:
+	$
+	\begin{bmatrix}
+		0 & 0 \\
+		0 & 0 \\
+	\end{bmatrix}_{2 \times 2},
+	\begin{bmatrix}
+		0 & 0 \\
+	\end{bmatrix}_{1 \times 2}
+	$
+	\item Ma trận đường chéo \textbf{thì vuông} \\
+	$
+	\begin{bmatrix}
+		a_{11} &  &  & &\\
+		& a_{22} &  & \bigzero &\\
+		&  & a_{33} & &\\
+		&  \bigzero & & \ddots & \\
+		&  & & & a_{nn} \\
+	\end{bmatrix}_{n \times n}$
+	\item Ma trận đơn vị \textbf{(kí hiệu I)} thì vuông và \textbf{trên đường chéo chính toàn số 1}: \\
+	+ Cấp 2: $I = \begin{bmatrix}
+		\mathbf{1} & 0 \\
+		0 & \mathbf{1}
+	\end{bmatrix}_{2 \times 2} = I_2$\\
+	+ Cấp 3: $I = \begin{bmatrix}
+		\mathbf{1} & 0 & 0\\
+		0 & \mathbf{1} & 0\\
+		0 & 0 & \mathbf{1}
+	\end{bmatrix}_{3 \times 3} = I_3$
+	\item Ma trận chuyển vị: Cho ma trận $A=[a_{ij}]_{m \times n}$ tùy ý. Nếu đổi (viết) dòng của A thành cột tương ứng sẽ thu được ma trận chuyển vị của A. Kí hiệu $A^\intercal$ \\
+	Gặp $\begin{bmatrix}
+		a & b & c \\
+	\end{bmatrix}_{1 \times 3}
+	\Rightarrow A^\intercal = \begin{bmatrix}
+		a \\
+		b \\
+		c \\
+	\end{bmatrix}_{3 \times 1}$ \\
+	
+	* Tính chất \\
+	$(A + B)^\intercal =A^\intercal + B^\intercal \\
+	(A^\intercal)^\intercal = A \\
+	(A.B)^\intercal =  \left\{\begin{matrix}
+		A^\intercal.B^\intercal \text{ sai} \\
+		B^\intercal.A^\intercal \text{ đúng}
+	\end{matrix}\right. $
+\end{enumerate}
+
+\subsection{Các phép toán trên ma trận}
+\begin{enumerate}
+	\item So sánh bằng \\
+	Hai ma trận $A=[a_{ij}]_{m\times n}$, $B=[b_{ij}]_{m\times n}$. Bằng nhau viết: $A=B \Leftrightarrow \left\{\begin{matrix}
+		\text{cũng cỡ m x} \\
+		a_{ij} = b_{ij}, \forall i,j
+	\end{matrix}\right. $
+	\item Phép cộng (trừ) 2 ma trận cùng cỡ: \\
+	*Tổng $A + B = [a_{ij} + b_{ij}]_{m\times n}$ \\
+	*Hiệu $A - B = [a_{ij} - b_{ij}]_{m\times n}$ \\
+	*Tính chất \\
+	! A + B = B + A giao hóa \\
+	! A + B + C = (A + B) + C kết hợp \\
+	! A + $\mathbb{0}$ = A
+	\item Phép nhân 1 số với ma trận \\
+	Tích: $\alpha.A = [\alpha.a_{ij}]_{m \times n}$ \\
+	*Chú ý: Không có phép toán (1 số) $\pm$ (Ma trận) \\
+	*Tính chất \\
+	! $(\alpha\beta).A = \alpha(A_{\beta}) = \beta(\alpha A)$ \\
+	! $\alpha(A+B) = \alpha A + \alpha B \\
+	! $ 0.A = $\mathbb{0}$; (-1).A = -A; A+(-A) = $\mathbb{0}$ \\
+	\item Phép toán hai ma trận \\
+	Cho $A = [a_{ij}]_{m \times \underline{n}}; B=[b_{ij}]_{\underline{n} \times p}$ \\
+	Khi đó, tích: $A.B=[C_{ij}]_{m \times p}$ \\
+	Trong đó phần tử $C_{ij}$ nằm tại dòng i và cột j tính bởi: \\
+	$C_{ij} = [\text{dòng i của A}] \times [\text{cột j của B}]$ \\
+	$C_{ij} = $
+	 \begin{tikzpicture}[baseline=(A.center), >=Stealth, every node/.style={inner sep=1pt, font=\small}]
+	 	
+	 	% Ma trận A (vector hàng)
+	 	\matrix (A) [matrix of math nodes,
+	 	left delimiter={[},
+	 	right delimiter={]},
+	 	row sep=1em] {
+	 		a_{i1} & a_{i2} & \cdots & a_{in} \\
+	 	};
+	 	
+	 	% Ma trận B (vector cột), đặt phía dưới ma trận A
+	 	\matrix (B) [matrix of math nodes,
+	 	left delimiter={[},
+	 	right delimiter={]},
+	 	right=1cm of A] {
+	 		b_{1j} \\ 
+	 		b_{2j} \\ 
+	 		\vdots \\ 
+	 		b_{nj} \\
+	 	};
+	 	
+	 	% Vẽ đường cong mũi tên từ a_{i1} ở A đến b_{1j} ở B
+	 	\draw[->, black, thick, bend left=45] (A-1-1) to node[above] {$\times$} (B-1-1);
+	 	\draw[->, black, thick, bend left=45] (A-1-2) to node[above] {$\times$} (B-2-1);
+	 	\draw[->, black, thick, bend right=45] (A-1-4) to node[above] {$\times$} (B-4-1);
+	 	
+	 	\end{tikzpicture}
+	 	$=a_{i1}b_{1j} + a_{i2}b_{2j} +...+ a_{in}b_{nj}$ \\
+	 	!Cần nhớ: \\
+	 	\begin{itemize}
+	 		\item Muốn $A.B$ (A bên trái B) thì điều kiện số cột của A phải bằng số dòng của B.
+	 		\item Nói chung kết quả $A.B \neq B.A$
+	 	\end{itemize}
+	 	!Tính chất \\
+	 	\begin{itemize}
+	 		\item $A.B.C = (A.B).C $ kết hợp.
+	 		\item $A.(B+C) = A.B + A.C $ phân phối.
+	 		\item $A.I = I.A =A$.
+	 		\item Lũy thừa của ma trận vuông \\
+	 		Ta cố $A^1=A, A^2=A.A, A^3=A^2.A,\cdots$ \\
+	 		$\boxed{A^k = A^{k-1} \times A}$ \hspace{.5cm} $1 \le k \in \mathbb{N}$ \\
+	 		*Nhớ $A^0 = I$. Với I ma trận đơn vị cùng cấp A
+	 		
+	 	\end{itemize}
+	 	
+\end{enumerate}
